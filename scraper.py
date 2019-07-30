@@ -29,9 +29,9 @@ def scrape_table(root):
             scraperwiki.sqlite.save(["Hospital"], record)
         
 # # scrape_and_look_for_next_link function: calls the scrape_table function
-def scrape_and_look_for_next_link(url):
+def scrape_and_look_for_next_link():
 # #   HOW DOES IT KNOW WHAT TO PUT IN URL?
-    html = scraperwiki.scrape(url)
+    html = scraperwiki.scrape()
     print html
     root = lxml.html.fromstring(html)
     scrape_table(root)
